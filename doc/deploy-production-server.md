@@ -1,6 +1,20 @@
 Deploy production server on Ubuntu 16.04
 -------------------------------------
 
+#### Simple Set-Up With Apache 
+
+sudo adduser deploy
+sudo usermod -a -G sudo deploy
+sudo su deploy
+cd
+wget https://raw.githubusercontent.com/anbuhckr/peatio/760b3d16bfe4fd51ac73d45c9a89fe2436c30e7b/install.sh
+source ~/install.sh
+RAILS_ENV=production rake solvency:liability_proof
+sudo certbot --apache -d example.com -d www.example.com
+
+############################################################################################################
+
+
 ### Overview
 
 1. Setup deploy user
